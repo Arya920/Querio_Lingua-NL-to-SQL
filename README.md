@@ -14,13 +14,13 @@ QuerioLingua is a Streamlit web application that allows you to generate SQL quer
 1. Clone this repository to your local machine:
 
    ```bash
-      git clone https://github.com/yourusername/queriolingua-app.git
+      git clone https://github.com/yourusername/queriolingua-app.git```
 
- ```bash
-      pip install -r requirements.txt
+```bash
+   pip install -r requirements.txt
+```
 
-
-Set up your OpenAI API key:
+set up your OpenAI API key:
 - Go to the OpenAI Developer Platform: https://platform.openai.com/account/api-keys
 - Copy your API key.
 - Open app.py and replace "YOUR_OPENAI_API_KEY" with your actual API key.
