@@ -16,6 +16,7 @@ QuerioLingua is a Streamlit web application that allows you to generate SQL quer
    ```bash
       git clone https://github.com/yourusername/queriolingua-app.git
 
+2. Install the Required Packages:
 ```bash
    pip install -r requirements.txt
 ```
