@@ -15,7 +15,10 @@ QuerioLingua is a Streamlit web application that allows you to generate SQL quer
 
    ```bash
    git clone https://github.com/yourusername/queriolingua-app.git
-pip install -r requirements.txt
+
+   ```bash
+     pip install -r requirements.txt
+
 
 Set up your OpenAI API key:
 - Go to the OpenAI Developer Platform: https://platform.openai.com/account/api-keys
