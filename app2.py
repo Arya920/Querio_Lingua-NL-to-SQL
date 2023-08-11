@@ -4,8 +4,7 @@ from sqlalchemy import text
 import pandas as pd
 import re
 import openai
-from secret_key2 import openai_key
-openai.api_key = openai_key
+openai.api_key = st.secrets["API_KEY"]
 
 import streamlit as st
 
