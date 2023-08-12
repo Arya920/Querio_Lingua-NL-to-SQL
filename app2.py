@@ -61,9 +61,33 @@ else:
 
     st.write("Showing only the 10 rows ~")
     st.table(df.head(10))
+    col1,col2,col3 = st.columns(3)
+    cat_col=[]
+    num_col=[]
+    for i in df.columns:
+        if df[i].dtype == "object":
+            cat_col.append(i)
+        else:
+            num_col.append(i)
+
+    # Description 
+    if st.button("Show Descriptions"):
+        with col1:
+            st.write("Number of Columns ~", len(df.columns))
+            st.write("Number of Rows ~", len(df))
+        with col2:
+            if len(cat_col) ==0 :
+                st.write("No Catagorical Columns")
+            else:
+                st.write("Catagorical Columns", cat_col)
+        with col3:
+            if len(num_col) ==0:
+                st.write("No Numerical Columns")
+            else:
+                st.write("Numerical Columns", num_col)
 
     # Taking the querry input 
-    nlp_text = st.text_input("Enter information you want to obtain:")
+    nlp_text = st.text_input("**:green[Enter information you want to obtain:]**")
 
     if nlp_text is None:
         st.warning("Enter a query to obtain information")
@@ -97,7 +121,7 @@ else:
 
         # Desigining the Output
         col1, col2 = st.columns(2)
-        if st.button("Show The SQL Querry and the Output"):
+        if st.button("**:green[Show The SQL Querry and the Output]**"):
             
             with col1: 
                     st.markdown('**:green[SQL Query]**')
