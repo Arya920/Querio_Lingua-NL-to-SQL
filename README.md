@@ -2,6 +2,7 @@
 ### QuerioLingua SQL Query Generator
 QuerioLingua is a Streamlit web application that allows you to generate SQL queries for your datasets using natural language prompts & text-davinci-003 as a base model.
 
+[Direct Link to Web App](https://queriolingua.streamlit.app/)
 ## Features
 
 - Upload a CSV file to analyze data.
