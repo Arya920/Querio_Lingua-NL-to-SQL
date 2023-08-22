@@ -4,7 +4,9 @@ from sqlalchemy import text
 import pandas as pd
 import re
 import openai
-openai.api_key = st.secrets["openai_key"]
+from secret_key import openai_key
+
+openai.api_key = openai_key
 
 import streamlit as st
 
@@ -82,12 +84,17 @@ else:
                 st.write("Catagorical Columns", cat_col)
         with col3:
             if len(num_col) ==0:
-                st.write("No Numerical Columns")
+                st.write("No Catagorical Columns")
             else:
                 st.write("Numerical Columns", num_col)
+    
+    # Column wise Description
+    
+
+            
 
     # Taking the querry input 
-    nlp_text = st.text_input("**:green[Enter information you want to obtain:]**")
+    nlp_text = st.text_input("Enter information you want to obtain:")
 
     if nlp_text is None:
         st.warning("Enter a query to obtain information")
@@ -121,14 +128,13 @@ else:
 
         # Desigining the Output
         col1, col2 = st.columns(2)
-        if st.button("**:green[Show The SQL Querry and the Output]**"):
+        if st.button("Show The SQL Querry and the Output"):
             
             with col1: 
                     st.markdown('**:green[SQL Query]**')
                     response_output = handle_response(response)
                     st.info(response_output)
                 
-
             with col2:
                 st.markdown('**:green[Query Output]**')
                 if nlp_text.strip():  # Only display if nlp_text is not empty
