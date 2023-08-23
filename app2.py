@@ -133,7 +133,7 @@ else:
             with col1: 
                     st.markdown('**:green[SQL Query]**')
                     response_output = handle_response(response)
-                    st.info(response_output)
+                    st.code(response_output)
                 
             with col2:
                 st.markdown('**:green[Query Output]**')
