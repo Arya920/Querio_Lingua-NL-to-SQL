@@ -128,6 +128,13 @@ ENV/
 env.bak/
 venv.bak/
 
+# Models folder
+Models/
+
+# Virtual environment nlsql
+nlsql/
+
+
 # Spyder project settings
 .spyderproject
 .spyproject
