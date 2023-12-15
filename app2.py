@@ -1,5 +1,5 @@
 import streamlit as st
-from sqlalchemy import create_engine
+from sqlalchemy import create_engine, Text
 from langchain.prompts import PromptTemplate
 from langchain.llms import CTransformers
 import pandas as pd
@@ -74,4 +74,19 @@ with col2:
         code_snippets_dict = getLLMresponse(question, col_names)
         for key, value in code_snippets_dict.items():
             st.code(value, language='sql')
+
+            try:
+                with my_db.connect() as conn:
+                    results = conn.execute(Text(value))
+                    result_data = results.fetchall()
+                    
+                    # Display the results
+                    if result_data:
+                        st.dataframe(pd.DataFrame(result_data, columns=results.keys()))
+                    else:
+                        st.warning("No data found for the given query.")
+            
+            except Exception as e:
+                st.warning("Error executing query as it is not executable.", icon='⚠️')
+
 
